@@ -1,0 +1,28 @@
+:root{
+    --lines-to-show: 5;
+    --line-height: 2;
+    --height: initial;
+    --height-to-show: calc(var(--lines-to-show) * var(--line-height) * 1em);
+}
+html,body{
+    background-color: rgb(32, 32, 32);
+}
+article{
+    line-height: var(--line-height);
+    color: white;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+}
+.expand-content{
+    overflow: hidden;
+    height: var(--height-to-show);
+}
+.expanded{
+    --height-to-show: var(--height);
+}
+[data-fit="true"] .expand-button{
+    display: none;
+}
+[data-fit="true"] .expand-content{
+    height: initial;
+}
